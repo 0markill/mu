@@ -52,6 +52,7 @@ func (d *clientDockerManager) ImageBuild(contextDir string, serviceName string, 
 		Tags:        tags,
 		Labels:      map[string]string{"SERVICE_NAME": serviceName},
 		AuthConfigs: registryAuthConfig,
+		Dockerfile:  relDockerfile,
 	}
 
 	buildContext, err := createBuildContext(contextDir, relDockerfile)
